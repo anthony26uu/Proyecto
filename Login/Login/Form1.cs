@@ -15,6 +15,7 @@ namespace Login
         {
             InitializeComponent();
         }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -28,6 +29,14 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+              //  string CMD=string.Format("Select * From Usuario Wh")
+            }catch(Exception error)
+            {
+                MessageBox.Show("Error " + error.Message);
+            }
 
         }
 
@@ -38,6 +47,17 @@ namespace Login
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
 
         }
     }
