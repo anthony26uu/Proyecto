@@ -11,6 +11,8 @@ namespace Login
 {
     public partial class Form1 : Form
     {
+        public object Me { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -31,9 +33,9 @@ namespace Login
         {
             try
             {
-
-              //  string CMD=string.Format("Select * From Usuario Wh")
-            }catch(Exception error)
+                
+            }
+            catch (Exception error)
             {
                 MessageBox.Show("Error " + error.Message);
             }
@@ -57,7 +59,23 @@ namespace Login
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
+            try
+            {
+               
+
+                Windows_Registre.show();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error " + error.Message);
+            }
+
+
+
+
+           
 
         }
     }
