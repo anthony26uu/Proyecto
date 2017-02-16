@@ -46,9 +46,9 @@
             // Cuenta
             // 
             this.Cuenta.AutoSize = true;
-            this.Cuenta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Cuenta.BackColor = System.Drawing.SystemColors.Window;
             this.Cuenta.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cuenta.Location = new System.Drawing.Point(253, 84);
+            this.Cuenta.Location = new System.Drawing.Point(217, 39);
             this.Cuenta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Cuenta.Name = "Cuenta";
             this.Cuenta.Size = new System.Drawing.Size(77, 24);
@@ -59,10 +59,10 @@
             // Login
             // 
             this.Login.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Login.Location = new System.Drawing.Point(402, 202);
+            this.Login.Location = new System.Drawing.Point(396, 114);
             this.Login.Margin = new System.Windows.Forms.Padding(6);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(156, 33);
+            this.Login.Size = new System.Drawing.Size(80, 33);
             this.Login.TabIndex = 1;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = false;
@@ -70,7 +70,7 @@
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(554, 368);
+            this.Exit.Location = new System.Drawing.Point(518, 250);
             this.Exit.Margin = new System.Windows.Forms.Padding(6);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(39, 42);
@@ -81,7 +81,7 @@
             // 
             // texPass
             // 
-            this.texPass.Location = new System.Drawing.Point(402, 126);
+            this.texPass.Location = new System.Drawing.Point(363, 75);
             this.texPass.Margin = new System.Windows.Forms.Padding(6);
             this.texPass.Name = "texPass";
             this.texPass.Size = new System.Drawing.Size(156, 30);
@@ -90,7 +90,7 @@
             // 
             // texCuenta
             // 
-            this.texCuenta.Location = new System.Drawing.Point(402, 84);
+            this.texCuenta.Location = new System.Drawing.Point(363, 33);
             this.texCuenta.Margin = new System.Windows.Forms.Padding(6);
             this.texCuenta.Name = "texCuenta";
             this.texCuenta.Size = new System.Drawing.Size(156, 30);
@@ -101,7 +101,7 @@
             this.Pass.AutoSize = true;
             this.Pass.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Pass.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass.Location = new System.Drawing.Point(253, 129);
+            this.Pass.Location = new System.Drawing.Point(217, 81);
             this.Pass.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Pass.Name = "Pass";
             this.Pass.Size = new System.Drawing.Size(89, 24);
@@ -126,7 +126,7 @@
             this.checkBox1.BackColor = System.Drawing.SystemColors.Info;
             this.checkBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(402, 165);
+            this.checkBox1.Location = new System.Drawing.Point(221, 126);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(118, 21);
             this.checkBox1.TabIndex = 7;
@@ -137,7 +137,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(20, 236);
+            this.linkLabel1.Location = new System.Drawing.Point(32, 228);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(135, 17);
             this.linkLabel1.TabIndex = 8;
@@ -156,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(608, 414);
+            this.ClientSize = new System.Drawing.Size(584, 313);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);

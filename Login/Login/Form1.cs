@@ -54,7 +54,7 @@ namespace Login
 
         private void Exit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -72,10 +72,7 @@ namespace Login
                 MessageBox.Show("Error " + error.Message);
             }
 
-
-
-
-           
+                  
 
         }
     }
