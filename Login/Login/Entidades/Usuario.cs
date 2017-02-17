@@ -9,13 +9,16 @@ namespace Login.Entidades
   public  class Usuario
     {
         [Key]
+        public int Id { get; set; }
         public string NombreUsuario { get; set; }
         public string PassUsuario { get; set; }
 
-        public Usuario(string nombreUsuario, string passUsuario)
+        public Usuario(int id , string nombreUsuario, string passUsuario)
         {
              PassUsuario = passUsuario;
-             NombreUsuario = nombreUsuario;
+             Id = id;
+             NombreUsuario = nombreUsuario; 
+
         }
 
         public Usuario()

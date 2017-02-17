@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Login.BLL
 {
@@ -36,9 +37,9 @@ namespace Login.BLL
                 result = n;
 
             }
-            catch (Exception)
+            catch (Exception )
             {
-
+               
                 throw;
             }
             return result;

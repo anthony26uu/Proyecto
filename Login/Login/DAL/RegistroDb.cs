@@ -14,5 +14,6 @@ namespace Login.DAL
 
         }
         public DbSet<Usuario> usuario { get; set; }
+        public DbSet<Articulos> articulo { get; set; }
     }
 }

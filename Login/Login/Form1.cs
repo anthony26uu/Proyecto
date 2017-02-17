@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace Login
         public Form1()
         {
             InitializeComponent();
+            timer1Hora.Enabled = true;
+          
         }
        
 
@@ -33,7 +36,8 @@ namespace Login
         {
             try
             {
-                
+                RegistroArticulo db = new RegistroArticulo();
+                db.Show();
             }
             catch (Exception error)
             {
@@ -62,9 +66,10 @@ namespace Login
 
             try
             {
-               
 
-                Windows_Registre.show();
+
+                Registro db = new Registro();
+                db.Show();
 
             }
             catch (Exception error)
@@ -73,6 +78,32 @@ namespace Login
             }
 
                   
+
+        }
+
+     
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1Hora_Tick(object sender, EventArgs e)
+        {
+            //Actualizar cada segundo la Hora
+            labelHORA.Text = DateTime.Now.ToLongTimeString();
+            //Fecha
+            labelFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void timerFecha_Tick(object sender, EventArgs e)
+        {
+         
+            
+        }
+
+        private void labelHORA_Click(object sender, EventArgs e)
+        {
 
         }
     }
