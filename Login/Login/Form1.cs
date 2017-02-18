@@ -35,16 +35,19 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
+                
                 Inicio db = new Inicio();
                 db.Show();
+
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error " + error.Message);
             }
-
+          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -68,8 +71,9 @@ namespace Login
             try
             {
 
+                RegistroUsuario db = new RegistroUsuario();
+                db.Show();
 
-               
 
             }
             catch (Exception error)

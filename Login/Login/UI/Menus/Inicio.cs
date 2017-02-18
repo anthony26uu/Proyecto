@@ -26,6 +26,9 @@ namespace Login.UI.Menus
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            Form1 db = new Form1();
+            db.Show();
+            
         }
 
         private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +64,12 @@ namespace Login.UI.Menus
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroEmpleados db = new RegistroEmpleados();
+            db.Show();
+        }
+
+        private void empleadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EmpleadoConsulta db = new EmpleadoConsulta();
             db.Show();
         }
     }

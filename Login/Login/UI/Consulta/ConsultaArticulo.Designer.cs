@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUser));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -138,7 +139,7 @@
             this.desdeDateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.desdeDateTimePicker.TabIndex = 29;
             // 
-            // ConsultaArticulos
+            // RegistroUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,8 +155,9 @@
             this.Controls.Add(this.HastadateTimePicker1);
             this.Controls.Add(this.desdeDateTimePicker);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ConsultaArticulos";
-            this.Text = "ConsultaArticulos";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "RegistroUser";
+            this.Text = "CONSULTA ARTICULOS";
             this.Load += new System.EventHandler(this.ConsultaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
