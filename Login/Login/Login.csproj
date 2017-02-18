@@ -68,11 +68,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\EmpleadoBLL.cs" />
     <Compile Include="BLL\Repositorio.cs" />
     <Compile Include="BLL\RepositorioBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RegistroDb.cs" />
     <Compile Include="Entidades\Articulos.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -87,17 +90,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroDbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RegistroDbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistroDbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultaArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultaArticulo.Designer.cs">
+      <DependentUpon>ConsultaArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultaUsuario.Designer.cs">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Menus\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Menus\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\RegistroArticulo.Designer.cs">
       <DependentUpon>RegistroArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\RegistroUser.cs">
+    <Compile Include="UI\Registros\RegistroEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\RegistroUser.Designer.cs">
-      <DependentUpon>RegistroUser.cs</DependentUpon>
+    <Compile Include="UI\Registros\RegistroEmpleados.Designer.cs">
+      <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistroUsuario.Designer.cs">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -112,11 +144,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consulta\ConsultaArticulo.resx">
+      <DependentUpon>ConsultaArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consulta\ConsultaUsuario.resx">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Menus\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroArticulo.resx">
       <DependentUpon>RegistroArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\RegistroUser.resx">
-      <DependentUpon>RegistroUser.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\RegistroEmpleados.resx">
+      <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistroUsuario.resx">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -140,10 +184,19 @@
     <None Include="RegistroDbDataSet.xss">
       <DependentUpon>RegistroDbDataSet.xsd</DependentUpon>
     </None>
+    <None Include="RegistroDbDataSet1.xsc">
+      <DependentUpon>RegistroDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RegistroDbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistroDbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RegistroDbDataSet1.xss">
+      <DependentUpon>RegistroDbDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\Consulta\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\RegistroDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -21,11 +21,12 @@ namespace Login.UI.Registros
         {
             idArticuloMaskedTextBox.Clear();
             nombreArticuloTextBox.Clear();
-            existenciaTextBox.Clear();
+            existenciaMaskedTextBox.Clear();
             precioCompraMaskedTextBox.Clear();
             precioVentaMaskedTextBox.Clear();
             codigoArticuloMaskedTextBox.Clear();
             fechaIngresoDateTimePicker.Value = DateTime.Today;
+            nombreArticuloTextBox.Focus();
         }
 
         private bool Validar()
@@ -36,9 +37,9 @@ namespace Login.UI.Registros
                 errorProviderNombre.SetError(nombreArticuloTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            if (string.IsNullOrWhiteSpace(existenciaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(existenciaMaskedTextBox.Text))
             {
-                errorProviderNombre.SetError(existenciaTextBox, "Campo Obligatorio");
+                errorProviderNombre.SetError(existenciaMaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
             if (string.IsNullOrWhiteSpace(precioCompraMaskedTextBox.Text))
@@ -71,7 +72,7 @@ namespace Login.UI.Registros
             categoriaComboBox.Items.Insert(2, "OTROS");
             categoriaComboBox.Items.Insert(3, "CALZADO");
             categoriaComboBox.DataSource = categoriaComboBox.Items;
-            categoriaComboBox.DisplayMember = "*SELCIONE*";
+            categoriaComboBox.DisplayMember = "ENLATADOS";
 
         }
 
@@ -91,7 +92,7 @@ namespace Login.UI.Registros
                 }
                 if (categoriaComboBox.SelectedIndex == 2)
                 {
-                    categoriaComboBox.Text = guardar.Categoria;
+                    categoriaComboBox.Text = "OTROS";
                 }
                 if (categoriaComboBox.SelectedIndex == 3)
                 {
@@ -105,7 +106,6 @@ namespace Login.UI.Registros
         private void RegistroArticulo_Load(object sender, EventArgs e)
         {
             LlenarCombo();
-
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -114,37 +114,54 @@ namespace Login.UI.Registros
         }
 
 
-
+        
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            var guardar = new Articulos();
-            Seleccione();
-            guardar.NombreArticulo = nombreArticuloTextBox.Text;
-            guardar.Existencia = Convert.ToInt32( existenciaTextBox.Text);
-            guardar.FechaIngreso = fechaIngresoDateTimePicker.Value.Date;
-            guardar.PrecioVenta = double.Parse(precioVentaMaskedTextBox.Text);
-            guardar.PrecioCompra = double.Parse(precioCompraMaskedTextBox.Text);
-            guardar.Categoria = categoriaComboBox.Text;
-             guardar.CodigoArticulo = Convert.ToInt32(codigoArticuloMaskedTextBox.Text);
-
-          //  guardar.IdArticulo = (Utils.TOINT(idArticuloMaskedTextBox.Text));
-        //    guardar.Existencia = (Utils.TOINT(nombreArticuloTextBox.Text));
-          //  guardar.PrecioVenta = (Utils.TOINT(precioVentaMaskedTextBox.Text));
-          //  guardar.PrecioCompra = (Utils.TOINT(precioCompraMaskedTextBox.Text));
-         //   guardar.CodigoArticulo = (Utils.TOINT(codigoArticuloMaskedTextBox.Text));
-           
-
-
-            if (!Validar())
+            try
             {
-                MessageBox.Show("Por favor llenar los campos");
-            }
-            else if (BLL.RepositorioBLL.Guardar(guardar))
-            {
-                MessageBox.Show("El articulo se agrego con exito.");
-            }
+              //  Seleccione();
+                var guardar = new Articulos();
+                guardar.IdArticulo = (Utils.TOINT(idArticuloMaskedTextBox.Text));
+                guardar.NombreArticulo = nombreArticuloTextBox.Text;
+                guardar.Existencia = (Utils.TOINT(existenciaMaskedTextBox.Text));
+                guardar.FechaIngreso = fechaIngresoDateTimePicker.Value.Date;
+               guardar.PrecioVenta =  precioVentaMaskedTextBox.Text;
+             guardar.PrecioCompra = precioCompraMaskedTextBox.Text;
+                guardar.CodigoArticulo = (Utils.TOINT(codigoArticuloMaskedTextBox.Text));
+              //  guardar.Categoria = categoriaComboBox.Text;
 
-            Limpiar();
+                string categoria = categoriaComboBox.SelectedValue.ToString();
+                guardar.Categoria = categoria;
+
+
+                //     guardar.CodigoArticulo = Convert.ToInt32(codigoArticuloMaskedTextBox.Text);
+
+                
+
+                //  guardar.PrecioVenta = (Utils.TOINT(precioVentaMaskedTextBox.Text));
+                //  guardar.PrecioCompra = (Utils.TOINT(precioCompraMaskedTextBox.Text));
+                //      guardar.Existencia = Convert.ToInt32( existenciaTextBox.Text);
+
+
+
+
+                if (!Validar())
+                {
+                    MessageBox.Show("Por favor llenar los campos");
+                }
+                else if (BLL.RepositorioBLL.Guardar(guardar))
+                {
+                    MessageBox.Show("El articulo se agrego con exito.");
+                }
+
+                Limpiar();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
 
@@ -177,9 +194,9 @@ namespace Login.UI.Registros
                 if (articulo != null)
                 {
                     nombreArticuloTextBox.Text = articulo.NombreArticulo;
-                    existenciaTextBox.Text = Convert.ToString( articulo.Existencia);
+                    existenciaMaskedTextBox.Text = Convert.ToString( articulo.Existencia);
                     precioVentaMaskedTextBox.Text = Convert.ToString(articulo.PrecioVenta);
-                    precioCompraMaskedTextBox.Text = Convert.ToString(articulo.PrecioCompra);
+                    precioCompraMaskedTextBox.Text = Convert.ToString( articulo.PrecioCompra);
                     categoriaComboBox.Text = articulo.Categoria;
                     codigoArticuloMaskedTextBox.Text = Convert.ToString(articulo.CodigoArticulo);
                     fechaIngresoDateTimePicker.Text = Convert.ToString(articulo.FechaIngreso);
@@ -194,5 +211,7 @@ namespace Login.UI.Registros
                 }
             }
         }
+
+       
     }
 }

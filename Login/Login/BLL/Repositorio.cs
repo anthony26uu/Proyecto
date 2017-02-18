@@ -1,9 +1,11 @@
 ﻿using Login.DAL;
+using Login.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Windows.Forms;
 
@@ -18,7 +20,7 @@ namespace Login.BLL
         {
             context = new RegistroDb();
         }
-
+        
         private DbSet<TEntity> EntitySet
         {
             get
@@ -29,12 +31,13 @@ namespace Login.BLL
 
         public TEntity Guardar(TEntity n)
         {
-            TEntity result = null;
-            try
+           try
             {
+          
+
                 EntitySet.Add(n);
                 context.SaveChanges();
-                result = n;
+                return  n;
 
             }
             catch (Exception )
@@ -42,8 +45,23 @@ namespace Login.BLL
                
                 throw;
             }
-            return result;
+            return null;
         }
+
+       /* public bool Modificar(TEntity entity)
+        {
+            try
+            {
+                EntitySet.Attach(entity);
+
+                Context.Entry<TEntity>(entity).State = EntityState.Modified;
+
+                return Context.SaveChanges() > 0;
+            }
+            catch { }
+            return false;
+        }*/
+
 
         public TEntity Buscar(Expression<Func<TEntity, bool>> id)
         {

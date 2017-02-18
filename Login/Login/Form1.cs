@@ -1,4 +1,5 @@
-﻿using Login.UI.Registros;
+﻿using Login.UI.Menus;
+using Login.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,7 @@ namespace Login
         {
             try
             {
-                RegistroArticulo db = new RegistroArticulo();
+                Inicio db = new Inicio();
                 db.Show();
             }
             catch (Exception error)
@@ -68,8 +69,7 @@ namespace Login
             {
 
 
-                Registro db = new Registro();
-                db.Show();
+               
 
             }
             catch (Exception error)

@@ -38,9 +38,9 @@
             System.Windows.Forms.Label codigoArticuloLabel;
             System.Windows.Forms.Label fechaIngresoLabel;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroArticulo));
             this.idArticuloMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
-            this.existenciaTextBox = new System.Windows.Forms.TextBox();
             this.precioVentaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.precioCompraMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.categoriaComboBox = new System.Windows.Forms.ComboBox();
@@ -56,6 +56,7 @@
             this.errorProviderPrecioCompra = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCategoria = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCodigoArticulo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.existenciaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -82,13 +83,6 @@
             idArticuloLabel.TabIndex = 1;
             idArticuloLabel.Text = "Id Articulo:";
             // 
-            // idArticuloMaskedTextBox
-            // 
-            this.idArticuloMaskedTextBox.Location = new System.Drawing.Point(149, 93);
-            this.idArticuloMaskedTextBox.Name = "idArticuloMaskedTextBox";
-            this.idArticuloMaskedTextBox.Size = new System.Drawing.Size(117, 20);
-            this.idArticuloMaskedTextBox.TabIndex = 2;
-            // 
             // nombreArticuloLabel
             // 
             nombreArticuloLabel.AutoSize = true;
@@ -97,13 +91,6 @@
             nombreArticuloLabel.Size = new System.Drawing.Size(85, 13);
             nombreArticuloLabel.TabIndex = 3;
             nombreArticuloLabel.Text = "Nombre Articulo:";
-            // 
-            // nombreArticuloTextBox
-            // 
-            this.nombreArticuloTextBox.Location = new System.Drawing.Point(149, 119);
-            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
-            this.nombreArticuloTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombreArticuloTextBox.TabIndex = 4;
             // 
             // existenciaLabel
             // 
@@ -114,13 +101,6 @@
             existenciaLabel.TabIndex = 5;
             existenciaLabel.Text = "Existencia:";
             // 
-            // existenciaTextBox
-            // 
-            this.existenciaTextBox.Location = new System.Drawing.Point(149, 145);
-            this.existenciaTextBox.Name = "existenciaTextBox";
-            this.existenciaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.existenciaTextBox.TabIndex = 6;
-            // 
             // precioVentaLabel
             // 
             precioVentaLabel.AutoSize = true;
@@ -129,13 +109,6 @@
             precioVentaLabel.Size = new System.Drawing.Size(71, 13);
             precioVentaLabel.TabIndex = 7;
             precioVentaLabel.Text = "Precio Venta:";
-            // 
-            // precioVentaMaskedTextBox
-            // 
-            this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(149, 171);
-            this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
-            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.precioVentaMaskedTextBox.TabIndex = 8;
             // 
             // precioCompraLabel
             // 
@@ -146,13 +119,6 @@
             precioCompraLabel.TabIndex = 9;
             precioCompraLabel.Text = "Precio Compra:";
             // 
-            // precioCompraMaskedTextBox
-            // 
-            this.precioCompraMaskedTextBox.Location = new System.Drawing.Point(149, 197);
-            this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
-            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.precioCompraMaskedTextBox.TabIndex = 10;
-            // 
             // categoriaLabel
             // 
             categoriaLabel.AutoSize = true;
@@ -161,14 +127,6 @@
             categoriaLabel.Size = new System.Drawing.Size(55, 13);
             categoriaLabel.TabIndex = 11;
             categoriaLabel.Text = "Categoria:";
-            // 
-            // categoriaComboBox
-            // 
-            this.categoriaComboBox.FormattingEnabled = true;
-            this.categoriaComboBox.Location = new System.Drawing.Point(149, 223);
-            this.categoriaComboBox.Name = "categoriaComboBox";
-            this.categoriaComboBox.Size = new System.Drawing.Size(200, 21);
-            this.categoriaComboBox.TabIndex = 12;
             // 
             // codigoArticuloLabel
             // 
@@ -179,13 +137,6 @@
             codigoArticuloLabel.TabIndex = 13;
             codigoArticuloLabel.Text = "Codigo Articulo:";
             // 
-            // codigoArticuloMaskedTextBox
-            // 
-            this.codigoArticuloMaskedTextBox.Location = new System.Drawing.Point(149, 250);
-            this.codigoArticuloMaskedTextBox.Name = "codigoArticuloMaskedTextBox";
-            this.codigoArticuloMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.codigoArticuloMaskedTextBox.TabIndex = 14;
-            // 
             // fechaIngresoLabel
             // 
             fechaIngresoLabel.AutoSize = true;
@@ -195,15 +146,6 @@
             fechaIngresoLabel.TabIndex = 15;
             fechaIngresoLabel.Text = "Fecha Ingreso:";
             // 
-            // fechaIngresoDateTimePicker
-            // 
-            this.fechaIngresoDateTimePicker.CustomFormat = "yyyy/MM/dd";
-            this.fechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaIngresoDateTimePicker.Location = new System.Drawing.Point(149, 276);
-            this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
-            this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaIngresoDateTimePicker.TabIndex = 16;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -212,6 +154,63 @@
             label1.Size = new System.Drawing.Size(120, 13);
             label1.TabIndex = 22;
             label1.Text = "REGISTRO ARTICULO";
+            // 
+            // idArticuloMaskedTextBox
+            // 
+            this.idArticuloMaskedTextBox.Location = new System.Drawing.Point(149, 93);
+            this.idArticuloMaskedTextBox.Name = "idArticuloMaskedTextBox";
+            this.idArticuloMaskedTextBox.Size = new System.Drawing.Size(117, 20);
+            this.idArticuloMaskedTextBox.TabIndex = 2;
+            // 
+            // nombreArticuloTextBox
+            // 
+            this.nombreArticuloTextBox.Location = new System.Drawing.Point(149, 119);
+            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
+            this.nombreArticuloTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreArticuloTextBox.TabIndex = 4;
+            // 
+            // precioVentaMaskedTextBox
+            // 
+            this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(149, 171);
+            this.precioVentaMaskedTextBox.Mask = "99999";
+            this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
+            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.precioVentaMaskedTextBox.TabIndex = 8;
+            this.precioVentaMaskedTextBox.ValidatingType = typeof(int);
+            // 
+            // precioCompraMaskedTextBox
+            // 
+            this.precioCompraMaskedTextBox.Location = new System.Drawing.Point(149, 197);
+            this.precioCompraMaskedTextBox.Mask = "99999";
+            this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
+            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.precioCompraMaskedTextBox.TabIndex = 10;
+            this.precioCompraMaskedTextBox.ValidatingType = typeof(int);
+            // 
+            // categoriaComboBox
+            // 
+            this.categoriaComboBox.FormattingEnabled = true;
+            this.categoriaComboBox.Location = new System.Drawing.Point(149, 223);
+            this.categoriaComboBox.Name = "categoriaComboBox";
+            this.categoriaComboBox.Size = new System.Drawing.Size(200, 21);
+            this.categoriaComboBox.TabIndex = 12;
+            // 
+            // codigoArticuloMaskedTextBox
+            // 
+            this.codigoArticuloMaskedTextBox.Location = new System.Drawing.Point(149, 250);
+            this.codigoArticuloMaskedTextBox.Mask = "9-999999-999999";
+            this.codigoArticuloMaskedTextBox.Name = "codigoArticuloMaskedTextBox";
+            this.codigoArticuloMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.codigoArticuloMaskedTextBox.TabIndex = 14;
+            // 
+            // fechaIngresoDateTimePicker
+            // 
+            this.fechaIngresoDateTimePicker.CustomFormat = "yyyy/MM/dd";
+            this.fechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fechaIngresoDateTimePicker.Location = new System.Drawing.Point(149, 276);
+            this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
+            this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaIngresoDateTimePicker.TabIndex = 16;
             // 
             // buttonBuscar
             // 
@@ -277,11 +276,21 @@
             // 
             this.errorProviderCodigoArticulo.ContainerControl = this;
             // 
+            // existenciaMaskedTextBox
+            // 
+            this.existenciaMaskedTextBox.Location = new System.Drawing.Point(149, 145);
+            this.existenciaMaskedTextBox.Mask = "99999";
+            this.existenciaMaskedTextBox.Name = "existenciaMaskedTextBox";
+            this.existenciaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.existenciaMaskedTextBox.TabIndex = 24;
+            this.existenciaMaskedTextBox.ValidatingType = typeof(int);
+            // 
             // RegistroArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 466);
+            this.Controls.Add(this.existenciaMaskedTextBox);
             this.Controls.Add(label1);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonGuardar);
@@ -292,7 +301,6 @@
             this.Controls.Add(nombreArticuloLabel);
             this.Controls.Add(this.nombreArticuloTextBox);
             this.Controls.Add(existenciaLabel);
-            this.Controls.Add(this.existenciaTextBox);
             this.Controls.Add(precioVentaLabel);
             this.Controls.Add(this.precioVentaMaskedTextBox);
             this.Controls.Add(precioCompraLabel);
@@ -303,6 +311,7 @@
             this.Controls.Add(this.codigoArticuloMaskedTextBox);
             this.Controls.Add(fechaIngresoLabel);
             this.Controls.Add(this.fechaIngresoDateTimePicker);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroArticulo";
             this.Text = "RegistroArticulo";
             this.Load += new System.EventHandler(this.RegistroArticulo_Load);
@@ -321,7 +330,6 @@
 
         private System.Windows.Forms.MaskedTextBox idArticuloMaskedTextBox;
         private System.Windows.Forms.TextBox nombreArticuloTextBox;
-        private System.Windows.Forms.TextBox existenciaTextBox;
         private System.Windows.Forms.MaskedTextBox precioVentaMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox precioCompraMaskedTextBox;
         private System.Windows.Forms.ComboBox categoriaComboBox;
@@ -337,5 +345,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderPrecioCompra;
         private System.Windows.Forms.ErrorProvider errorProviderCategoria;
         private System.Windows.Forms.ErrorProvider errorProviderCodigoArticulo;
+        private System.Windows.Forms.MaskedTextBox existenciaMaskedTextBox;
     }
 }
