@@ -19,8 +19,6 @@ namespace Login.BLL
             return retorno;
 
         }
-
-
         public static bool Eliminar(Articulos IdArticulo)
         {
             bool resultado = false;

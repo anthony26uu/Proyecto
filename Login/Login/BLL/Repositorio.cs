@@ -48,21 +48,7 @@ namespace Login.BLL
             return null;
         }
 
-       /* public bool Modificar(TEntity entity)
-        {
-            try
-            {
-                EntitySet.Attach(entity);
-
-                Context.Entry<TEntity>(entity).State = EntityState.Modified;
-
-                return Context.SaveChanges() > 0;
-            }
-            catch { }
-            return false;
-        }*/
-
-
+    
         public TEntity Buscar(Expression<Func<TEntity, bool>> id)
         {
             TEntity retorno = null;

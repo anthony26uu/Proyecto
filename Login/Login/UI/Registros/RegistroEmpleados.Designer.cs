@@ -78,13 +78,6 @@
             idEmpleadoLabel.TabIndex = 1;
             idEmpleadoLabel.Text = "Id Empleado:";
             // 
-            // idEmpleadoNumericUpDown
-            // 
-            this.idEmpleadoNumericUpDown.Location = new System.Drawing.Point(172, 89);
-            this.idEmpleadoNumericUpDown.Name = "idEmpleadoNumericUpDown";
-            this.idEmpleadoNumericUpDown.Size = new System.Drawing.Size(99, 20);
-            this.idEmpleadoNumericUpDown.TabIndex = 2;
-            // 
             // nombreEmpleadoLabel
             // 
             nombreEmpleadoLabel.AutoSize = true;
@@ -94,13 +87,6 @@
             nombreEmpleadoLabel.TabIndex = 3;
             nombreEmpleadoLabel.Text = "Nombre Empleado:";
             // 
-            // nombreEmpleadoTextBox
-            // 
-            this.nombreEmpleadoTextBox.Location = new System.Drawing.Point(172, 115);
-            this.nombreEmpleadoTextBox.Name = "nombreEmpleadoTextBox";
-            this.nombreEmpleadoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombreEmpleadoTextBox.TabIndex = 4;
-            // 
             // telefonoEmpleadoLabel
             // 
             telefonoEmpleadoLabel.AutoSize = true;
@@ -109,13 +95,6 @@
             telefonoEmpleadoLabel.Size = new System.Drawing.Size(102, 13);
             telefonoEmpleadoLabel.TabIndex = 5;
             telefonoEmpleadoLabel.Text = "Telefono Empleado:";
-            // 
-            // telefonoEmpleadoMaskedTextBox
-            // 
-            this.telefonoEmpleadoMaskedTextBox.Location = new System.Drawing.Point(172, 141);
-            this.telefonoEmpleadoMaskedTextBox.Name = "telefonoEmpleadoMaskedTextBox";
-            this.telefonoEmpleadoMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.telefonoEmpleadoMaskedTextBox.TabIndex = 6;
             // 
             // fechaContratacionLabel
             // 
@@ -129,47 +108,72 @@
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(63, 196);
+            direccionLabel.Location = new System.Drawing.Point(63, 202);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(55, 13);
             direccionLabel.TabIndex = 9;
             direccionLabel.Text = "Direccion:";
             // 
-            // direccionTextBox
-            // 
-            this.direccionTextBox.Location = new System.Drawing.Point(172, 193);
-            this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
-            this.direccionTextBox.TabIndex = 10;
-            // 
             // salarioLabel
             // 
             salarioLabel.AutoSize = true;
-            salarioLabel.Location = new System.Drawing.Point(63, 222);
+            salarioLabel.Location = new System.Drawing.Point(63, 249);
             salarioLabel.Name = "salarioLabel";
             salarioLabel.Size = new System.Drawing.Size(42, 13);
             salarioLabel.TabIndex = 11;
             salarioLabel.Text = "Salario:";
             // 
-            // salarioMaskedTextBox
-            // 
-            this.salarioMaskedTextBox.Location = new System.Drawing.Point(172, 219);
-            this.salarioMaskedTextBox.Name = "salarioMaskedTextBox";
-            this.salarioMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.salarioMaskedTextBox.TabIndex = 12;
-            // 
             // cargoLabel
             // 
             cargoLabel.AutoSize = true;
-            cargoLabel.Location = new System.Drawing.Point(63, 248);
+            cargoLabel.Location = new System.Drawing.Point(63, 275);
             cargoLabel.Name = "cargoLabel";
             cargoLabel.Size = new System.Drawing.Size(38, 13);
             cargoLabel.TabIndex = 13;
             cargoLabel.Text = "Cargo:";
             // 
+            // idEmpleadoNumericUpDown
+            // 
+            this.idEmpleadoNumericUpDown.Location = new System.Drawing.Point(172, 89);
+            this.idEmpleadoNumericUpDown.Name = "idEmpleadoNumericUpDown";
+            this.idEmpleadoNumericUpDown.Size = new System.Drawing.Size(99, 20);
+            this.idEmpleadoNumericUpDown.TabIndex = 2;
+            // 
+            // nombreEmpleadoTextBox
+            // 
+            this.nombreEmpleadoTextBox.Location = new System.Drawing.Point(172, 115);
+            this.nombreEmpleadoTextBox.Name = "nombreEmpleadoTextBox";
+            this.nombreEmpleadoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreEmpleadoTextBox.TabIndex = 4;
+            // 
+            // telefonoEmpleadoMaskedTextBox
+            // 
+            this.telefonoEmpleadoMaskedTextBox.Location = new System.Drawing.Point(172, 141);
+            this.telefonoEmpleadoMaskedTextBox.Mask = "(999)000-0000";
+            this.telefonoEmpleadoMaskedTextBox.Name = "telefonoEmpleadoMaskedTextBox";
+            this.telefonoEmpleadoMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.telefonoEmpleadoMaskedTextBox.TabIndex = 6;
+            // 
+            // direccionTextBox
+            // 
+            this.direccionTextBox.Location = new System.Drawing.Point(172, 199);
+            this.direccionTextBox.Multiline = true;
+            this.direccionTextBox.Name = "direccionTextBox";
+            this.direccionTextBox.Size = new System.Drawing.Size(200, 41);
+            this.direccionTextBox.TabIndex = 10;
+            // 
+            // salarioMaskedTextBox
+            // 
+            this.salarioMaskedTextBox.Location = new System.Drawing.Point(172, 246);
+            this.salarioMaskedTextBox.Mask = "99999";
+            this.salarioMaskedTextBox.Name = "salarioMaskedTextBox";
+            this.salarioMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.salarioMaskedTextBox.TabIndex = 12;
+            this.salarioMaskedTextBox.ValidatingType = typeof(int);
+            // 
             // cargoTextBox
             // 
-            this.cargoTextBox.Location = new System.Drawing.Point(172, 245);
+            this.cargoTextBox.Location = new System.Drawing.Point(172, 272);
             this.cargoTextBox.Name = "cargoTextBox";
             this.cargoTextBox.Size = new System.Drawing.Size(200, 20);
             this.cargoTextBox.TabIndex = 14;
@@ -186,7 +190,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(194, 286);
+            this.buttonGuardar.Location = new System.Drawing.Point(194, 313);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 25;
@@ -196,7 +200,7 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(300, 286);
+            this.buttonEliminar.Location = new System.Drawing.Point(300, 313);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
             this.buttonEliminar.TabIndex = 24;
@@ -206,7 +210,7 @@
             // 
             // buttonNuevo
             // 
-            this.buttonNuevo.Location = new System.Drawing.Point(85, 286);
+            this.buttonNuevo.Location = new System.Drawing.Point(85, 313);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
             this.buttonNuevo.TabIndex = 23;

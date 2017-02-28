@@ -12,6 +12,7 @@ namespace Login.UI.Registros
 {
     public partial class RegistroEmpleados : Form
     {
+        Empleado empleado = new Empleado();
         public RegistroEmpleados()
         {
             InitializeComponent();
@@ -27,6 +28,12 @@ namespace Login.UI.Registros
             salarioMaskedTextBox.Clear();
             cargoTextBox.Clear();
             nombreEmpleadoTextBox.Focus();
+            errorProviderCargo.Clear();
+            errorProviderDireccion.Clear();
+            errorProviderNombre.Clear();
+            errorProviderSalario.Clear();
+            errorProviderTelefono.Clear();
+            empleado = new Empleado();
         }
 
         private bool Validar()
@@ -61,6 +68,19 @@ namespace Login.UI.Registros
             return retorno;
         }
 
+        private Empleado LlenarCampos()
+        {
+          
+            empleado.IdEmpleado = (Utils.TOINT(idEmpleadoNumericUpDown.Text));
+            empleado.NombreEmpleado = nombreEmpleadoTextBox.Text;
+            empleado.TelefonoEmpleado = Convert.ToInt32(telefonoEmpleadoMaskedTextBox.Text);
+            empleado.FechaContratacion = fechaContratacionDateTimePicker.Value.Date;
+            empleado.Direccion = direccionTextBox.Text;
+            empleado.Salario = salarioMaskedTextBox.Text;
+            empleado.Cargo = cargoTextBox.Text;
+
+            return empleado;
+        }
 
 
         private void RegistroEmpleados_Load(object sender, EventArgs e)
@@ -73,22 +93,15 @@ namespace Login.UI.Registros
 
             try
             {
-                var guardar = new Empleado();
-                guardar.IdEmpleado = (Utils.TOINT(idEmpleadoNumericUpDown.Text));
-                guardar.NombreEmpleado = nombreEmpleadoTextBox.Text;
-                guardar.TelefonoEmpleado = Convert.ToInt32(telefonoEmpleadoMaskedTextBox.Text);
-                guardar.FechaContratacion = fechaContratacionDateTimePicker.Value.Date;
-                guardar.Direccion = direccionTextBox.Text;
-                guardar.Salario = salarioMaskedTextBox.Text;
-                guardar.Cargo = cargoTextBox.Text;
-
+                empleado = LlenarCampos();
+                    
 
 
                 if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
                 }
-                else if (BLL.EmpleadoBLL.Guardar(guardar))
+                else if (BLL.EmpleadoBLL.Guardar(empleado))
                 {
                     MessageBox.Show("El Empleado se agrego con exito.");
                 }

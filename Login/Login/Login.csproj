@@ -68,15 +68,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artiiculo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Artiiculo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BLL\EmpleadoBLL.cs" />
     <Compile Include="BLL\Repositorio.cs" />
     <Compile Include="BLL\RepositorioBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="BLL\VentasBLL.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RegistroDb.cs" />
     <Compile Include="Entidades\Articulos.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Ventas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +125,12 @@
     </Compile>
     <Compile Include="UI\Menus\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Menus\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Menus\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\RegistroArticulo.cs">
       <SubType>Form</SubType>
@@ -162,6 +175,9 @@
     <EmbeddedResource Include="UI\Menus\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Menus\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroArticulo.resx">
       <DependentUpon>RegistroArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +188,17 @@
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Artiiculo.xsc">
+      <DependentUpon>Artiiculo.xsd</DependentUpon>
+    </None>
+    <None Include="Artiiculo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Artiiculo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Artiiculo.xss">
+      <DependentUpon>Artiiculo.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -205,7 +232,12 @@
       <DependentUpon>RegistroDbDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AutoExplicacion\AutoExplicacion.csproj">
+      <Project>{640E68DF-4A47-476F-96C7-641E98034BE0}</Project>
+      <Name>AutoExplicacion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\RegistroDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

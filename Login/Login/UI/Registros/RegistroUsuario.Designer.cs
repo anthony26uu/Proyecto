@@ -40,12 +40,12 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.ConfirmaContextBox = new System.Windows.Forms.TextBox();
-            this.idMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nombreUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.passUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.errorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderContra = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderConfirmaContr = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmaContr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -148,13 +149,6 @@
             this.ConfirmaContextBox.Size = new System.Drawing.Size(147, 20);
             this.ConfirmaContextBox.TabIndex = 33;
             // 
-            // idMaskedTextBox
-            // 
-            this.idMaskedTextBox.Location = new System.Drawing.Point(167, 84);
-            this.idMaskedTextBox.Name = "idMaskedTextBox";
-            this.idMaskedTextBox.Size = new System.Drawing.Size(74, 20);
-            this.idMaskedTextBox.TabIndex = 28;
-            // 
             // nombreUsuarioTextBox
             // 
             this.nombreUsuarioTextBox.Location = new System.Drawing.Point(167, 110);
@@ -181,11 +175,19 @@
             // 
             this.errorProviderConfirmaContr.ContainerControl = this;
             // 
+            // IdnumericUpDown
+            // 
+            this.IdnumericUpDown.Location = new System.Drawing.Point(167, 81);
+            this.IdnumericUpDown.Name = "IdnumericUpDown";
+            this.IdnumericUpDown.Size = new System.Drawing.Size(74, 20);
+            this.IdnumericUpDown.TabIndex = 40;
+            // 
             // RegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 336);
+            this.Controls.Add(this.IdnumericUpDown);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonEliminar);
@@ -194,7 +196,6 @@
             this.Controls.Add(label1);
             this.Controls.Add(this.ConfirmaContextBox);
             this.Controls.Add(idLabel);
-            this.Controls.Add(this.idMaskedTextBox);
             this.Controls.Add(nombreUsuarioLabel);
             this.Controls.Add(this.nombreUsuarioTextBox);
             this.Controls.Add(passUsuarioLabel);
@@ -205,6 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmaContr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,11 +219,11 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.TextBox ConfirmaContextBox;
-        private System.Windows.Forms.MaskedTextBox idMaskedTextBox;
         private System.Windows.Forms.TextBox nombreUsuarioTextBox;
         private System.Windows.Forms.TextBox passUsuarioTextBox;
         private System.Windows.Forms.ErrorProvider errorProviderNombre;
         private System.Windows.Forms.ErrorProvider errorProviderContra;
         private System.Windows.Forms.ErrorProvider errorProviderConfirmaContr;
+        private System.Windows.Forms.NumericUpDown IdnumericUpDown;
     }
 }

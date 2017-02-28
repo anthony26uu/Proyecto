@@ -33,7 +33,7 @@ namespace Login.UI.Menus
 
         private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroArticulo db = new RegistroArticulo();
+            ConsultaArticulo db = new ConsultaArticulo();
             db.Show();
         }
 
@@ -70,6 +70,13 @@ namespace Login.UI.Menus
         private void empleadoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             EmpleadoConsulta db = new EmpleadoConsulta();
+            db.Show();
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            //Consulta Articulo Tuve problemas con referencia de la ventana
+            RegistroUser db = new RegistroUser();
             db.Show();
         }
     }

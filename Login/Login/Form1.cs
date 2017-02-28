@@ -1,4 +1,5 @@
-﻿using Login.UI.Menus;
+﻿using AutoExplicacion;
+using Login.UI.Menus;
 using Login.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ using System.Windows.Forms;
 
 namespace Login
 {
+
+
     public partial class Form1 : Form
     {
         public object Me { get; private set; }
@@ -21,7 +24,32 @@ namespace Login
             timer1Hora.Enabled = true;
           
         }
-       
+
+        private bool Validar()
+        {
+            bool retorno = true;
+            if (string.IsNullOrWhiteSpace(texCuenta.Text))
+            {
+                errorProviderNombre.SetError(texCuenta, "Campo vacio");
+                retorno = false;
+            }
+            if (string.IsNullOrWhiteSpace(texPass.Text))
+            {
+                errorProviderPass.SetError(texPass, "Campo Vacio");
+                retorno = false;
+            }
+            return retorno;
+
+        }
+
+        private void limpiar()
+        {
+            texCuenta.Clear();
+            texPass.Clear();
+            texCuenta.Focus();
+            errorProviderNombre.Clear();
+            errorProviderPass.Clear();
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -35,20 +63,43 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Inicio db = new Inicio();
+            db.Show();
+            /*
             try
             {
-                
-                Inicio db = new Inicio();
-                db.Show();
 
-            }
+                if (!Validar())
+                {
+                    MessageBox.Show("Por favor llenar los campos");
+                //    limpiar();
+                }
+                else
+                {
+
+                    if (texCuenta.Text == "Admin" && texPass.Text == "0000")
+                    {
+                        Inicio db = new Inicio();
+                        db.Show();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Nombre Usuario & Contraseña \n  Son Incorrectos");
+                    }
+                }
+               
+
+
+
+        }
             catch (Exception error)
             {
                 MessageBox.Show("Error " + error.Message);
             }
-          
+         */
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -70,9 +121,18 @@ namespace Login
 
             try
             {
-
-                RegistroUsuario db = new RegistroUsuario();
-                db.Show();
+                if (texCuenta.Text == "Admin" && texPass.Text == "0000")
+                {
+                    RegistroUsuario db = new RegistroUsuario();
+                    db.Show();
+                }
+                else
+                {
+                 //   MessageBox.Show("Nombre Usuario & Contraseña \n  Son Incorrectos");
+                    errorProviderNombre.SetError(texCuenta, "Verifique e intente de nuevo");
+                    errorProviderPass.SetError(texPass, "Verifique e intente de nuevo");
+                }
+                
 
 
             }
@@ -110,5 +170,14 @@ namespace Login
         {
 
         }
+
+        private void autoExplicacion1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+      
+
     }
 }

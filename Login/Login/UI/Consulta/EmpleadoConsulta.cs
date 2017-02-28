@@ -19,7 +19,7 @@ namespace Login.UI.Consulta
 
         public void Llenar()
         {
-            //  comboBox1.Items.Insert(3, "Nombre1");
+       
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "FECHA");
             comboBox1.Items.Insert(2, "TODO");
@@ -29,13 +29,8 @@ namespace Login.UI.Consulta
             comboBox1.DisplayMember = "Nombre";
 
         }
-
         public void Selecionar()
         {
-
-
-
-
             using (var db = new BLL.Repositorio<Empleado>())
             {
                 if (comboBox1.SelectedIndex == 0)
@@ -56,8 +51,6 @@ namespace Login.UI.Consulta
                 }
             }
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             Selecionar();

@@ -1,6 +1,6 @@
 ﻿namespace Login.UI.Registros
 {
-    partial class RegistroArticulo
+    partial class ConsultaArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,8 @@
             System.Windows.Forms.Label codigoArticuloLabel;
             System.Windows.Forms.Label fechaIngresoLabel;
             System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroArticulo));
-            this.idArticuloMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            System.Windows.Forms.Label iTBSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaArticulo));
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.precioVentaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.precioCompraMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -57,6 +57,9 @@
             this.errorProviderCategoria = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCodigoArticulo = new System.Windows.Forms.ErrorProvider(this.components);
             this.existenciaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ArticulonumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.iTBSMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.errorProviderITBS = new System.Windows.Forms.ErrorProvider(this.components);
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -66,12 +69,15 @@
             codigoArticuloLabel = new System.Windows.Forms.Label();
             fechaIngresoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            iTBSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderExistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrecioVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrecioCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCodigoArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulonumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderITBS)).BeginInit();
             this.SuspendLayout();
             // 
             // idArticuloLabel
@@ -149,18 +155,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(41, 24);
+            label1.Location = new System.Drawing.Point(56, 9);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(120, 13);
             label1.TabIndex = 22;
             label1.Text = "REGISTRO ARTICULO";
-            // 
-            // idArticuloMaskedTextBox
-            // 
-            this.idArticuloMaskedTextBox.Location = new System.Drawing.Point(149, 93);
-            this.idArticuloMaskedTextBox.Name = "idArticuloMaskedTextBox";
-            this.idArticuloMaskedTextBox.Size = new System.Drawing.Size(117, 20);
-            this.idArticuloMaskedTextBox.TabIndex = 2;
             // 
             // nombreArticuloTextBox
             // 
@@ -224,7 +223,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(168, 327);
+            this.buttonGuardar.Location = new System.Drawing.Point(170, 359);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 20;
@@ -234,7 +233,7 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(274, 327);
+            this.buttonEliminar.Location = new System.Drawing.Point(276, 359);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
             this.buttonEliminar.TabIndex = 19;
@@ -244,7 +243,7 @@
             // 
             // buttonNuevo
             // 
-            this.buttonNuevo.Location = new System.Drawing.Point(59, 327);
+            this.buttonNuevo.Location = new System.Drawing.Point(61, 359);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
             this.buttonNuevo.TabIndex = 18;
@@ -285,11 +284,43 @@
             this.existenciaMaskedTextBox.TabIndex = 24;
             this.existenciaMaskedTextBox.ValidatingType = typeof(int);
             // 
+            // ArticulonumericUpDown
+            // 
+            this.ArticulonumericUpDown.Location = new System.Drawing.Point(149, 90);
+            this.ArticulonumericUpDown.Name = "ArticulonumericUpDown";
+            this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ArticulonumericUpDown.TabIndex = 25;
+            // 
+            // iTBSLabel
+            // 
+            iTBSLabel.AutoSize = true;
+            iTBSLabel.Location = new System.Drawing.Point(67, 314);
+            iTBSLabel.Name = "iTBSLabel";
+            iTBSLabel.Size = new System.Drawing.Size(34, 13);
+            iTBSLabel.TabIndex = 26;
+            iTBSLabel.Text = "ITBS:";
+            // 
+            // iTBSMaskedTextBox
+            // 
+            this.iTBSMaskedTextBox.Location = new System.Drawing.Point(149, 311);
+            this.iTBSMaskedTextBox.Mask = "99999";
+            this.iTBSMaskedTextBox.Name = "iTBSMaskedTextBox";
+            this.iTBSMaskedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.iTBSMaskedTextBox.TabIndex = 27;
+            this.iTBSMaskedTextBox.ValidatingType = typeof(int);
+            // 
+            // errorProviderITBS
+            // 
+            this.errorProviderITBS.ContainerControl = this;
+            // 
             // RegistroArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 466);
+            this.Controls.Add(iTBSLabel);
+            this.Controls.Add(this.iTBSMaskedTextBox);
+            this.Controls.Add(this.ArticulonumericUpDown);
             this.Controls.Add(this.existenciaMaskedTextBox);
             this.Controls.Add(label1);
             this.Controls.Add(this.buttonBuscar);
@@ -297,7 +328,6 @@
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(idArticuloLabel);
-            this.Controls.Add(this.idArticuloMaskedTextBox);
             this.Controls.Add(nombreArticuloLabel);
             this.Controls.Add(this.nombreArticuloTextBox);
             this.Controls.Add(existenciaLabel);
@@ -321,14 +351,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrecioCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCodigoArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulonumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderITBS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox idArticuloMaskedTextBox;
         private System.Windows.Forms.TextBox nombreArticuloTextBox;
         private System.Windows.Forms.MaskedTextBox precioVentaMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox precioCompraMaskedTextBox;
@@ -346,5 +376,8 @@
         private System.Windows.Forms.ErrorProvider errorProviderCategoria;
         private System.Windows.Forms.ErrorProvider errorProviderCodigoArticulo;
         private System.Windows.Forms.MaskedTextBox existenciaMaskedTextBox;
+        private System.Windows.Forms.NumericUpDown ArticulonumericUpDown;
+        private System.Windows.Forms.MaskedTextBox iTBSMaskedTextBox;
+        private System.Windows.Forms.ErrorProvider errorProviderITBS;
     }
 }

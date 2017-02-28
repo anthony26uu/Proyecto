@@ -19,7 +19,7 @@ namespace Login.UI.Consulta
 
         public void Llenar()
         {
-            //  comboBox1.Items.Insert(3, "Nombre1");
+         
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "TODO");
 

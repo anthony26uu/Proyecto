@@ -12,7 +12,6 @@ namespace Login.DAL
         bool Eliminar(TEntity Id);
         TEntity Buscar(Expression<Func<TEntity, bool>> Id);
         List<TEntity> GetList();
-    //    bool Modificar(TEntity entity);
         List<TEntity> GetListNombre(Expression<Func<TEntity, bool>> nombre);
         List<TEntity> GetListFecha(Expression<Func<TEntity, bool>> fecha);
     }

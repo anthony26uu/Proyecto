@@ -4,7 +4,7 @@ Existencia int,
 PrecioVenta float, 
 PrecioCompra float,
 Categoria varchar(80),
-CodigoArticulo int,
+CodigoArticulo varchar(80),
 FechaIngreso DateTime 
  );
 
@@ -22,3 +22,13 @@ PassUsuario varchar(70)
  Salario varchar(100),
  Cargo varchar(100),
  )
+
+
+create table Ventas(IdVenta int primary key identity ,
+FechaVenta DateTime , 
+Descuento float, 
+Cliente varchar(80),  
+TipoVenta varchar(80), 
+Producto varchar(80),
+CantidadProd int ,
+ITBS float);

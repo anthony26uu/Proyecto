@@ -15,10 +15,11 @@ namespace Login.Entidades
         public string PrecioVenta { get; set; }
         public string PrecioCompra { get; set; }
         public string Categoria { get; set; }
-        public int CodigoArticulo { get; set; }
+        public string CodigoArticulo { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public string ITBS { get; set; }
 
-        public Articulos(int idArticulo, String nombreArticulo, int existencia, string precioVenta, string precioCompra, string categoria, int codigoArticulo, DateTime fechaIngreso )
+        public Articulos(string itbs, int idArticulo, String nombreArticulo, int existencia, string precioVenta, string precioCompra, string categoria, string codigoArticulo, DateTime fechaIngreso )
         {
             IdArticulo = idArticulo;
             NombreArticulo = nombreArticulo;
@@ -28,6 +29,7 @@ namespace Login.Entidades
             Categoria = categoria;
             CodigoArticulo = codigoArticulo;
             FechaIngreso= fechaIngreso;
+            ITBS = itbs;
 
 
 
