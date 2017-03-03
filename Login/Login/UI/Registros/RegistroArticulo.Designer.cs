@@ -161,6 +161,15 @@
             label1.TabIndex = 22;
             label1.Text = "REGISTRO ARTICULO";
             // 
+            // iTBSLabel
+            // 
+            iTBSLabel.AutoSize = true;
+            iTBSLabel.Location = new System.Drawing.Point(67, 314);
+            iTBSLabel.Name = "iTBSLabel";
+            iTBSLabel.Size = new System.Drawing.Size(34, 13);
+            iTBSLabel.TabIndex = 26;
+            iTBSLabel.Text = "ITBS:";
+            // 
             // nombreArticuloTextBox
             // 
             this.nombreArticuloTextBox.Location = new System.Drawing.Point(149, 119);
@@ -291,15 +300,6 @@
             this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.ArticulonumericUpDown.TabIndex = 25;
             // 
-            // iTBSLabel
-            // 
-            iTBSLabel.AutoSize = true;
-            iTBSLabel.Location = new System.Drawing.Point(67, 314);
-            iTBSLabel.Name = "iTBSLabel";
-            iTBSLabel.Size = new System.Drawing.Size(34, 13);
-            iTBSLabel.TabIndex = 26;
-            iTBSLabel.Text = "ITBS:";
-            // 
             // iTBSMaskedTextBox
             // 
             this.iTBSMaskedTextBox.Location = new System.Drawing.Point(149, 311);
@@ -313,7 +313,7 @@
             // 
             this.errorProviderITBS.ContainerControl = this;
             // 
-            // RegistroArticulo
+            // ConsultaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -342,7 +342,7 @@
             this.Controls.Add(fechaIngresoLabel);
             this.Controls.Add(this.fechaIngresoDateTimePicker);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RegistroArticulo";
+            this.Name = "ConsultaArticulo";
             this.Text = "RegistroArticulo";
             this.Load += new System.EventHandler(this.RegistroArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).EndInit();

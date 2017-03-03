@@ -81,6 +81,25 @@ namespace Login.BLL
             return result;
         }
 
+        public bool Modificar(TEntity laEntidad)
+        {
+            bool Result = false;
+
+            try
+            {
+                //para que el contexto lo considere como si estubiera recien agregado
+                EntitySet.Attach(laEntidad);
+
+                //Para que entityframework sepa que la va a actualizar.
+                context.Entry<TEntity>(laEntidad).State = EntityState.Modified;
+
+                Result = context.SaveChanges() > 0;
+            }
+            catch { }
+
+            return Result;
+        }
+
         public List<TEntity> GetList()
         {
 

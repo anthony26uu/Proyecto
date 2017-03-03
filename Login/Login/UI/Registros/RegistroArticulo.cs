@@ -146,18 +146,37 @@ namespace Login.UI.Registros
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
-            {           
-            articulo= llenarCampos();
-                if (!Validar())
-                {
-                    MessageBox.Show("Por favor llenar los campos");
-                }
-                else if (BLL.RepositorioBLL.Guardar(articulo))
-                {
-                    MessageBox.Show("El articulo se agrego con exito.");
-                }
+            {
+                using (var db = new BLL.Repositorio<Articulos>())
+                {   int id = 0;
+                    
+                    if (!Validar())
+                    {
+                        MessageBox.Show("Por favor llenar los campos");
+                    }
+                    else 
+                    {
 
-                Limpiar();
+                        articulo = llenarCampos();
+
+                        if (id != articulo.IdArticulo )
+                    {
+                        db.Modificar(articulo);
+                    
+                        MessageBox.Show("El articulo ha sido modificado");
+
+                    }
+                    else
+                    {
+                        BLL.RepositorioBLL.Guardar(articulo);
+                        MessageBox.Show("El articulo ha sido Guardado");
+
+                    }
+
+                  }
+
+                    Limpiar();
+                }
 
             }
             catch (Exception)
